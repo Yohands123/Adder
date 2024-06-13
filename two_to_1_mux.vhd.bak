@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity two_to_1_mux is
+port (
+	logic_in0, logic_in1 					  : in std_logic_Vector(3 downto 0);
+	mux_select									  : in std_logic;
+	p_out 										  : out std_logic_vector(3 downto 0) -- The hex Output
+);
+
+end two_to_1_mux; 
+
+
+
+architecture mux_logic of two_to_1_mux is 
+
+begin
+-- for the mulitplexing of four hex input busses
+with mux_select select
+p_out <= (logic_in0 AND logic_in1) when "0", 
+			  (logic_in0 OR logic_in1) when "1";
+			  
+end mux_logic; 

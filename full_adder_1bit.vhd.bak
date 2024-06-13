@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity full_adder_1bit is
+port (
+	INPUT_B								: in std_logic;
+	INPUT_A								: in std_logic; 
+	CARRY_IN								: in std_logic; 
+	FULL_ADDER_CARRY_OUTPUT			: out std_logic; 
+	FULL_ADDER_SUM_OUTPUT			: out std_logic
+);
+
+end full_adder_1bit; 
+
+
+
+architecture full_adder of full_adder_1bit is 
+
+	component half_adder_1bit port(
+		INPUT_B					: in std_logic; 
+		INPUT_A					: in std_logic; 
+		CARRY_OUPUT				: out std_logic;
+		SUM_OUTPUT				: out std_logic 
+	); 
+	end component; 
+
+begin
+	
+			  
+end full_adder; 
